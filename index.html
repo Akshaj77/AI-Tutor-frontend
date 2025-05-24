@@ -197,7 +197,7 @@
         const sendButton = document.getElementById('send-button');
         const API_ENDPOINT = 'https://web-production-16258.up.railway.app/ask';
 
-        // Add a message to the chat
+        
         function addMessage(text, isUser) {
             const messageDiv = document.createElement('div');
             messageDiv.className = `message ${isUser ? 'user-message' : 'bot-message'}`;
@@ -206,7 +206,7 @@
             chatMessages.scrollTop = chatMessages.scrollHeight;
         }
 
-        // Show typing indicator
+        
         function showTyping() {
             const typingDiv = document.createElement('div');
             typingDiv.className = 'message bot-message typing-indicator';
@@ -220,7 +220,7 @@
             chatMessages.scrollTop = chatMessages.scrollHeight;
         }
 
-        // Hide typing indicator
+        
         function hideTyping() {
             const typingIndicator = document.getElementById('typing-indicator');
             if (typingIndicator) {
@@ -228,17 +228,17 @@
             }
         }
 
-        // Send message to backend
+        
         async function sendMessage() {
             const prompt = promptInput.value.trim();
             if (!prompt) return;
-            print(prompt);
+            
 
-            // Add user message to chat
+            
             addMessage(prompt, true);
             promptInput.value = '';
 
-            // Show typing indicator
+            
             showTyping();
 
             try {
@@ -268,7 +268,7 @@
             }
         }
 
-        // Event listeners
+    
         sendButton.addEventListener('click', sendMessage);
         promptInput.addEventListener('keypress', (e) => {
             if (e.key === 'Enter') {
